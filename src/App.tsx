@@ -369,7 +369,7 @@ export default function App() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-md bg-zinc-900 border border-zinc-800 p-8 rounded-3xl shadow-2xl"
+          className="w-full max-w-md bg-zinc-900 border border-zinc-800 p-9 rounded-3xl shadow-2xl"
         >
           <div className="flex flex-col items-center mb-8">
             <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-4 rotate-3 shadow-lg shadow-orange-500/20">
@@ -379,14 +379,14 @@ export default function App() {
             <p className="text-zinc-400 text-sm mt-2">Il tuo portafoglio ti ringrazierà (forse).</p>
           </div>
 
-          <form onSubmit={handleAuth} className="space-y-4">
+          <form onSubmit={handleAuth} className="space-y-5">
             <div>
               <label className="block text-xs font-bold uppercase tracking-widest text-zinc-500 mb-1 ml-1">Email</label>
               <input 
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3.5 focus:outline-none focus:border-orange-500 transition-colors"
                 placeholder="tu@esempio.it"
                 required
               />
@@ -397,23 +397,23 @@ export default function App() {
                 type="password" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3.5 focus:outline-none focus:border-orange-500 transition-colors"
                 placeholder="••••••••"
                 required
               />
             </div>
             <button 
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-orange-500/20"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4.5 px-5 rounded-xl transition-all transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-orange-500/20"
             >
               {isLogin ? "Entra ora" : "Crea Account"}
             </button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="mt-7 text-center">
             <button 
               onClick={() => setIsLogin(!isLogin)}
-              className="text-zinc-500 hover:text-white text-sm transition-colors"
+              className="text-zinc-500 hover:text-white text-sm px-3 py-2 rounded-lg transition-colors"
             >
               {isLogin ? "Non hai un account? Registrati" : "Hai già un account? Accedi"}
             </button>
@@ -432,7 +432,7 @@ export default function App() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
-          className="w-full max-w-lg bg-zinc-900 border border-zinc-800 p-8 rounded-[2rem] relative overflow-hidden"
+          className="w-full max-w-lg bg-zinc-900 border border-zinc-800 p-9 rounded-[2rem] relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-1 bg-zinc-800">
             <motion.div 
@@ -452,7 +452,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-7">
             <p className="text-lg italic text-zinc-300">
               "Ehi! Hai una scadenza per {currentCat.name.toLowerCase()}? Se sì, dimmi quanto paghi di solito e quando scade la prossima volta."
             </p>
@@ -464,7 +464,7 @@ export default function App() {
                   type="number" 
                   value={onboardingAmount}
                   onChange={(e) => setOnboardingAmount(e.target.value)}
-                  className="w-full bg-zinc-800 border border-zinc-700 rounded-xl p-3" 
+                  className="w-full bg-zinc-800 border border-zinc-700 rounded-xl p-3.5" 
                   placeholder="0.00" 
                 />
               </div>
@@ -474,21 +474,21 @@ export default function App() {
                   type="date" 
                   value={onboardingDate}
                   onChange={(e) => setOnboardingDate(e.target.value)}
-                  className="w-full bg-zinc-800 border border-zinc-700 rounded-xl p-3" 
+                  className="w-full bg-zinc-800 border border-zinc-700 rounded-xl p-3.5" 
                 />
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-1">
               <button 
                 onClick={() => handleOnboardingNext(true)}
-                className="flex-1 bg-zinc-800 hover:bg-zinc-700 py-4 rounded-xl font-bold transition-colors"
+                className="flex-1 bg-zinc-800 hover:bg-zinc-700 py-4.5 px-4 rounded-xl font-bold transition-colors"
               >
                 Non ce l'ho
               </button>
               <button 
                 onClick={() => handleOnboardingNext(false)}
-                className="flex-1 bg-orange-500 hover:bg-orange-600 py-4 rounded-xl font-bold transition-all shadow-lg shadow-orange-500/20"
+                className="flex-1 bg-orange-500 hover:bg-orange-600 py-4.5 px-4 rounded-xl font-bold transition-all shadow-lg shadow-orange-500/20"
               >
                 Salva e Avanti
               </button>
@@ -510,11 +510,11 @@ export default function App() {
           <h1 className="text-2xl font-black italic tracking-tighter">SchedulAI</h1>
         </div>
 
-        <nav className="flex items-center gap-2 bg-zinc-900 p-1 rounded-2xl border border-zinc-800">
+        <nav className="flex items-center gap-2.5 bg-zinc-900 p-1.5 rounded-2xl border border-zinc-800">
           <button 
             onClick={() => setView("chat")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all",
+              "flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-bold transition-all",
               view === "chat" ? "bg-orange-500 text-white" : "text-zinc-400 hover:text-white"
             )}
           >
@@ -524,7 +524,7 @@ export default function App() {
           <button 
             onClick={() => setView("calendar")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all",
+              "flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-bold transition-all",
               view === "calendar" ? "bg-orange-500 text-white" : "text-zinc-400 hover:text-white"
             )}
           >
@@ -534,7 +534,7 @@ export default function App() {
           <button 
             onClick={() => setView("budgets")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all",
+              "flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-bold transition-all",
               view === "budgets" ? "bg-orange-500 text-white" : "text-zinc-400 hover:text-white"
             )}
           >
@@ -544,7 +544,7 @@ export default function App() {
           <button 
             onClick={() => setView("profile")}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all",
+              "flex items-center gap-2 px-4.5 py-2.5 rounded-xl text-sm font-bold transition-all",
               view === "profile" ? "bg-orange-500 text-white" : "text-zinc-400 hover:text-white"
             )}
           >
@@ -555,7 +555,7 @@ export default function App() {
 
         <button 
           onClick={handleLogout}
-          className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-500 transition-all"
+          className="p-3.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-500 transition-all"
         >
           <LogOut className="w-5 h-5" />
         </button>
