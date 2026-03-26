@@ -8,11 +8,11 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ path: path.join(process.cwd(), ".env.keys") });
 
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) {
-  console.warn("JWT_SECRET not found in environment. Using fallback for development.");
+  console.warn("JWT_SECRET not found in .env.keys. Using fallback for development.");
 }
 const SECRET = JWT_SECRET || "schedulai-super-secret-key";
 const DATA_DIR = path.join(process.cwd(), "data");
